@@ -6,13 +6,13 @@ table td,th{
     font-optical-sizing: auto;
     font-weight: 300;
     font-style: normal;
+    padding: 5px;
     
-    padding: 3px;
     
 }
 table{
     border-collapse: collapse;
-    border: 3px solid;
+    border: 3px none;
 
 }
 table td > img{
@@ -20,4 +20,18 @@ table td > img{
 }
 .line{
     height: 2px;
+    width: 100%;
+    margin-bottom: 5px;
 }
+td{
+    background-color: rgb(197, 197, 197);
+    padding-bottom: 2px;
+    transition: 0.2s background-color;
+    
+}
+
+td:hover{
+    cursor:grabbing;
+    background-color: rgba(148, 148, 148, 0.283);
+}
+
