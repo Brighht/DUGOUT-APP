@@ -1,15 +1,23 @@
 body{
     margin: 0;
 }
-table td tr{
+table td,th{
     font-family: "Outfit", sans-serif;
     font-optical-sizing: auto;
     font-weight: 300;
     font-style: normal;
+    
+    padding: 3px;
+    
+}
+table{
+    border-collapse: collapse;
+    border: 3px solid;
 
 }
-
-table {
-    border-collapse: collapse;
-    
+table td > img{
+    height: 18px;
+}
+.line{
+    height: 2px;
 }
