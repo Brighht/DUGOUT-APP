@@ -15,7 +15,5 @@ def home(request):
         standings = data['standings'][0]['table']
     return render(request, 'home.html',{'standings':standings})
 
-from django.test import TestCase, Client
-from django.urls import reverse
 
 
