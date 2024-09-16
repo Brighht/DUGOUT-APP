@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="{% static 'src/css/header.css' %}" type="text/css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Playwrite+US+Modern:wght@100..400&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
     </head>
     <body>
         <div class="header">
@@ -34,9 +34,10 @@
         </div>
         <div>
             <div>
-               <table class="table">
+               <table>
                     <tr>
                         <th>Pos</th>
+                        <th></th>
                         <th>Team Name</th>
                         <th>Matches</th>
                         <th>Points</th>
@@ -45,6 +46,7 @@
                     {% for standing in standings%}
                     <tr>
                         <td>{{standing.position}}</td>
+                        <td><img class="club-logo" src="{{ standing.team.crest }}" alt="club-logo"></td>
                         <td>{{standing.team.name}}</td>
                         <td>{{standing.playedGames}}</td>
                         <td>{{standing.points}}</td>

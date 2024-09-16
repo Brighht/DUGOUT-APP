@@ -1,11 +1,15 @@
 body{
     margin: 0;
 }
-table td{
-    font-family: "Playwrite US Modern", cursive;
+table td tr{
+    font-family: "Outfit", sans-serif;
     font-optical-sizing: auto;
-    font-weight:400;
+    font-weight: 300;
     font-style: normal;
-    font-size: larger;
 
+}
+
+table {
+    border-collapse: collapse;
+    
 }
