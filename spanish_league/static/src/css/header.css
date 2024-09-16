@@ -3,8 +3,10 @@
     flex-direction: row;
     height: 60px;
     justify-content: space-between;
-    margin-bottom: 40px;
+    padding-bottom: 20px;
     border-bottom-width: 2px;
+    border-bottom-style: solid;
+    border-bottom-color: rgb(237, 74, 74);
 }
 
 .left-header {

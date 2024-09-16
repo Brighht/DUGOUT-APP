@@ -18,10 +18,18 @@ table{
 table td > img{
     height: 18px;
 }
+.lines{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
 .line{
     height: 2px;
-    width: 100%;
-    margin-bottom: 5px;
+    flex: 1;
+    background: rgba(237, 74, 74, 0.546);;
 }
 td{
     background-color: rgb(197, 197, 197);
@@ -35,3 +43,6 @@ td:hover{
     background-color: rgba(148, 148, 148, 0.283);
 }
 
+.gifs{
+    height: 40px;
+}
