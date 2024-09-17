@@ -13,6 +13,7 @@ table td,th{
 table{
     border-collapse: collapse;
     border: 3px none;
+    margin-right: 50px;
 
 }
 table td > img{
@@ -45,4 +46,41 @@ td:hover{
 
 .gifs{
     height: 40px;
+}
+
+.main-page{
+    display: flex;
+    flex-direction: row;
+}
+
+.grid-layout{
+    margin-top: 2rem;
+    padding: 5px;
+    display: grid;
+    grid-template-columns: 25rem 200px;
+    grid-template-rows: 220px 200px;
+    column-gap: 20px ;
+    row-gap: 20px;
+    height: 200px;
+}
+
+.grid1{
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 1.3rem;
+}
+.grid2{
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 1.3rem;
+}
+.grid3{
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 1.3rem;
+}
+.grid4{
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 1.3rem;
 }
