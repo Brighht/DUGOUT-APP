@@ -63,10 +63,9 @@ td:hover{
     padding: 5px;
     display: grid;
     grid-template-columns: 25rem  40rem;
-    grid-template-rows: 220px 25rem 25rem;
+    grid-template-rows: 25rem 15rem;
     column-gap: 20px ;
     row-gap: 20px;
-    height: 200px;
 }
 
 
@@ -77,6 +76,7 @@ td:hover{
     border-radius: 1.3rem;
     align-items: center;
     justify-content: space-evenly;
+    height: 20rem;
 }
 .grid2{
     border-width: 2px;
@@ -89,7 +89,16 @@ td:hover{
     border-width: 2px;
     border-style: solid;
     border-radius: 1.3rem;
+    height: 15rem;
 }
+
+.grid4{
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 1.3rem;
+    
+}
+
 .selection-option1{
     height: 5rem;
    
