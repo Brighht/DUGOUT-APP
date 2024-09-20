@@ -1,7 +1,6 @@
 from django.shortcuts import render
 from spanish_league import settings
 import requests 
-import json
 
 # Create your views here.
 def home(request):

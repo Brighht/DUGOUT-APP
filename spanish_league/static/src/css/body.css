@@ -1,5 +1,10 @@
 body{
     margin: 0;
+    font-family: "Outfit", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    padding: 5px;
 }
 table td,th{
     font-family: "Outfit", sans-serif;
@@ -64,11 +69,14 @@ td:hover{
     height: 200px;
 }
 
+
 .grid1{
+    display: flex;
     border-width: 2px;
     border-style: solid;
     border-radius: 1.3rem;
-    justify-self: start;
+    align-items: center;
+    justify-content: space-evenly;
 }
 .grid2{
     border-width: 2px;
@@ -85,3 +93,28 @@ td:hover{
     border-style: solid;
     border-radius: 1.3rem;
 }
+
+.selection-option1{
+    height: 5rem;
+   
+}
+
+.selection-option2{
+    height: 5rem;
+    
+}
+
+.vs-text{
+    font-size: larger;
+    
+}
+
+.teambutton{
+
+    background-color: white;
+    border: none;
+}
+
+.teambutton:hover{
+    cursor: pointer;
+}   
