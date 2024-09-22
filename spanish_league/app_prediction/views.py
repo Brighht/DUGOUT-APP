@@ -13,8 +13,6 @@ def home(request):
     if response.status_code == 200:
         data = response.json()
         standings = data['standings'][0]['table']
-        
     return render(request, 'home.html',{'standings':standings})
-
 
 
