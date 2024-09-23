@@ -77,9 +77,12 @@ td:hover{
     justify-content: space-evenly;
 }
 .grid2{
+    display: flex;
     border-width: 2px;
     border-style: solid;
     border-radius: 1.3rem;
+    justify-content: center;
+    align-items: center;
 }
 
 

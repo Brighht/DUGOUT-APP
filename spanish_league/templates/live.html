@@ -4,12 +4,12 @@
         <title>Live Matches</title>
     </head>
     <body>
-        <button class="teambutton" id="selection-option1"></button>
-            <img src="{% static 'src/circle-plus.svg' %} " class="selection-option1" >
-        </button>
-        <p class="vs-text">VS</p>
-        <button class="teambutton" id="selection-option2">
-            <img src="{% static 'src/circle-plus.svg' %} " class="selection-option2">
-        </button>
+        {% for matches in liveMatches%}
+        <p>{{matches.area.name}}</p>
+        <p>{{matches.area.name}}</p>
+        <p>{{matches.area.name}}</p>
+        <p>{{matches.area.name}}</p>
+        <p>{{matches.area.name}}</p>
+        {%endfor%}
     </body>
 </html>

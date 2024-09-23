@@ -21,7 +21,7 @@ def live_matches(request):
     api_key = settings.API_FOOTBALL_KEY
     headers = {"X-Auth-Token":api_key}
 
-    response = request.get(url, headers)
+    response = requests.get(url, headers=headers)
 
     if response.status_code == 200:
         data_II = response.json()
