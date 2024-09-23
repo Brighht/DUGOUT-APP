@@ -62,12 +62,11 @@ td:hover{
     margin-top: 2rem;
     padding: 5px;
     display: grid;
-    grid-template-columns: 25rem  40rem;
-    grid-template-rows: 25rem 15rem;
+    grid-template-columns: 25rem ;
+    grid-template-rows: 24rem;
     column-gap: 20px ;
     row-gap: 20px;
 }
-
 
 .grid1{
     display: flex;
