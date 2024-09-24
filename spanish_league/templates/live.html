@@ -4,9 +4,9 @@
         <title>Live Matches</title>
     </head>
     <body>
-        {% for team in liveMatches %}
+        {% for matches in liveMatches %}
         <div>
-            {{team.name}} vs
+            {{matches.resultSet.count}} vs
         </div>
         {%endfor%}
     </body>

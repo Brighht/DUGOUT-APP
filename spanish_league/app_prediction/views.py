@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from spanish_league import settings
 import requests 
+import json
 
 # Create your views here.
 def home(request):
@@ -17,7 +18,7 @@ def home(request):
 
 
 def live_matches(request):
-    url = 'https://api.football-data.org/v4/matches'
+    url = 'https://api.football-data.org/v4/teams/5/matches'
     api_key = settings.API_FOOTBALL_KEY
     headers = {"X-Auth-Token":api_key}
 
@@ -25,5 +26,5 @@ def live_matches(request):
 
     if response.status_code == 200:
         data_II = response.json()
-        liveMatches = data_II
+        liveMatches = data_II['matches']
     return render(request, 'live.html', {"liveMatches": liveMatches})
