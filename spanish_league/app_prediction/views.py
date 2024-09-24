@@ -25,5 +25,5 @@ def live_matches(request):
 
     if response.status_code == 200:
         data_II = response.json()
-        liveMatches = data_II['area']
+        liveMatches = data_II
     return render(request, 'live.html', {"liveMatches": liveMatches})
