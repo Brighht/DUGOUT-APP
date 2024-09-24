@@ -4,6 +4,10 @@
         <title>Live Matches</title>
     </head>
     <body>
-        {{matches.area}}
+        {% for team in homeTeam %}
+        <div>
+            {{team.name}} vs
+        </div>
+        {%endfor%}
     </body>
 </html>
