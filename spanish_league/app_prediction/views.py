@@ -26,5 +26,4 @@ def live_matches(request):
     if response.status_code == 200:
         data_II = response.json()
         liveMatches = data_II
-        home_Team = data_II['homeTeam']
-    return render(request, 'live.html', {"liveMatches": liveMatches, "homeTeam": home_Team})
+    return render(request, 'live.html', {"liveMatches": liveMatches})
