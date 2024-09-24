@@ -47,8 +47,6 @@ User Accounts: Allow users to save predictions and track their accuracy over tim
 Contributing
 Contributions are welcome! Feel free to open a pull request or report issues.
 
-License
-This project is licensed under the MIT License. See the LICENSE file for details.
 
 Contact
 Developer: Bright Andoh
