@@ -18,13 +18,12 @@ def home(request):
 
 
 def live_matches(request):
-    url = 'https://api.football-data.org/v4/matches/330299'
+    url = 'http://api.football-data.org/v4/matches'
     api_key = settings.API_FOOTBALL_KEY
     headers = { 'X-Auth-Token': api_key}
-    liveMatches = None
     response = requests.get(url, headers=headers)
 
     if response.status_code == 200:
         data_II = response.json()
-        liveMatches = data_II['REGULAR_SEASON'][-1]['homeTeam']
+        liveMatches = data_II["matches"]
     return render(request, 'live.html', {"liveMatches": liveMatches})
