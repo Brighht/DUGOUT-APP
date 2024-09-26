@@ -46,6 +46,8 @@ Multi-league Support: Expand the app to include predictions for other football l
 User Accounts: Allow users to save predictions and track their accuracy over time.
 Contributing
 Contributions are welcome! Feel free to open a pull request or report issues.
+Sorry I can't share my API key 
+Just sign up for yours football-data
 
 
 Contact
