@@ -105,7 +105,7 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-API_FOOTBALL_KEY = os.getenv('FOOTBALL_API_KEY','2f32e6b34ed647ae9aad223c2de93432')
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
