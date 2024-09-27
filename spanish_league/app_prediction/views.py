@@ -27,6 +27,7 @@ def live_matches(request):
     if response.status_code == 200:
         data_II = response.json()
         liveMatches = data_II["matches"]                                    #retrieves matches diction from the json file
-        homeTeam = data_II["matches"]                                       
+        for team in data_II["matches"]:
+            homeTeam = team.get("homeTeam")                                       
         awayTeam = data_II["matches"]
     return render(request, 'live.html', {"liveMatches": liveMatches,"homeTeam":homeTeam, "awayTeam":awayTeam})
