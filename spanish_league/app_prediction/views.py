@@ -18,7 +18,7 @@ def home(request):
 
 
 def live_matches(request):
-    url = 'http://api.football-data.org/v4/competitions/2014/matches?dateFrom='
+    url = 'http://api.football-data.org/v4/competitions/2014/matches?matchday=8'
     api_key = settings.API_FOOTBALL_KEY
     headers = { 'X-Auth-Token': api_key}
     response = requests.get(url, headers=headers)
@@ -26,7 +26,7 @@ def live_matches(request):
     #checking to see if we really have received the expected data from the data
     if response.status_code == 200:
         data_II = response.json()
-        liveMatches = data_II["matches"][0]                 #retrieves matches diction from the json file
-        homeTeam = data_II["matches"][0]
-        awayTeam = data_II["matches"][0]["awayTeam"]
+        liveMatches = data_II["matches"]                                    #retrieves matches diction from the json file
+        homeTeam = data_II["matches"]                                       
+        awayTeam = data_II["matches"]
     return render(request, 'live.html', {"liveMatches": liveMatches,"homeTeam":homeTeam, "awayTeam":awayTeam})
