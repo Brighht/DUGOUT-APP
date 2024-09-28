@@ -1,3 +1,5 @@
+"This contains data of laliga from 1995"
+
 CREATE TABLE LaLiga_Matches (
     id BIGSERIAL NOT NULL PRIMARY KEY,
     Season VARCHAR(10) NOT NULL,
