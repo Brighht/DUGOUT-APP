@@ -1,24 +1,26 @@
+{% load static %}
 <!DOCTYPE hmtl>
 <html>
     <head>
+        <link rel="stylesheet" href="{% static 'src/css/live.css' %}" type="text/css">
         <title>Live Matches</title>
     </head>
     <body>
         <div>{{liveMatches.competition.name}}</div>
-        <div>
+        <div class="livematches">
             <table>
+                <tr>
+                    <th>Home</th>
+                    <th>Away</th>
+                </tr>
                  <tr>
-                     <th>Hometeam</th>
-                     <th>score</th>
-                     <th>Awayteam</th>
+                    <td>{{liveMatches.homeTeam.name}}</td>
+                    <td>{{liveMatches.awayTeam.name}}</td>
                  </tr>
-                 {% for Hometeams in Hometeam%}
-                 <tr>
-                     <td>{{Hometeams.name}}</td>
-                     <td>{{Hometeams.winner}}</td>
-                     <td>{{Hometeams.shortname}}</td>
-                 </tr>
-                 {%endfor%}
-            </table> 
+                
+            </table>
+                
+        </div>
+            
     </body>
 </html>
