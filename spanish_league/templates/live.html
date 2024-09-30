@@ -5,18 +5,8 @@
     </head>
     <body>
         <div>{{liveMatches.competition.name}}</div>
-        <div>
-            <table>
-                 <tr>
-                     <th>Hometeam</th>
-                     <th>score</th>
-                     <th>Awayteam</th>
-                 </tr>
-                 <tr>
-                     <td>{{Hometeams.name}}</td>
-                     <td>{{Hometeams.winner}}</td>
-                     <td>{{Hometeams.shortname}}</td>
-                 </tr>
-            </table> 
+            {{hometeam}}
+            {{hometeam.winner}}
+            {{hometeam.shortname}}
     </body>
 </html>
