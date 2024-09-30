@@ -1,10 +1,16 @@
+{% load static %}
 <!DOCTYPE hmtl>
 <html>
     <head>
+        <link rel="stylesheet" href="{% static 'src/css/live.css' %}" type="text/css">
         <title>Live Matches</title>
     </head>
     <body>
         <div>{{liveMatches.competition.name}}</div>
-        <div>{{hometeam.homeTeam.name}}</div>   
+        <div class="livematches">
+            {{liveMatches.homeTeam.name}} VS {{liveMatches.awayTeam.name}}
+            {{liveMatches.homeTeam.name}} VS {{liveMatches.awayTeam.name}}
+        </div>
+            
     </body>
 </html>
