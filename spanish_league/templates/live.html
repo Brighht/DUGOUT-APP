@@ -8,8 +8,18 @@
     <body>
         <div>{{liveMatches.competition.name}}</div>
         <div class="livematches">
-            {{liveMatches.homeTeam.name}} VS {{liveMatches.awayTeam.name}}
-            {{liveMatches.homeTeam.name}} VS {{liveMatches.awayTeam.name}}
+            <table>
+                <tr>
+                    <th>Home</th>
+                    <th>Away</th>
+                </tr>
+                 <tr>
+                    <td>{{liveMatches.homeTeam.name}}</td>
+                    <td>{{liveMatches.awayTeam.name}}</td>
+                 </tr>
+                
+            </table>
+                
         </div>
             
     </body>
