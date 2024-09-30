@@ -1,6 +1,11 @@
 .livematches{
     display: flex;
 
-    padding: 5px;
+    
 }
 
+table{
+    border-collapse: collapse;
+    border: 3px none;
+    margin-right: 50px;
+}
