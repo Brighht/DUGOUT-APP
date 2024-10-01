@@ -25,7 +25,8 @@ def live_matches(request):
 
     #checking to see if we really have received the expected data from the data
     if response.status_code == 200:
+        liveMatches = []
         data_II = response.json()
-        for match in data_II["matches"]:                                  #This iterates throught the json file and locates the values contained by the key "matches"
-            liveMatches = match                                                                     
+        for match in data_II['matches']:                                  #This iterates throught the json file and locates the values contained by the key "matches"
+            liveMatches.append(match)                                                                     
     return render(request, 'live.html', {"liveMatches": liveMatches},)

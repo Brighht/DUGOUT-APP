@@ -14,11 +14,11 @@
                     <th></th>
                     <th>Away</th>
                 </tr>
-                {%for match in liveMatches%}
+                {% for livematch in liveMatches %}
                  <tr>
-                    <td>{{match.homeTeam.name}}</td>
+                    <td>{{livematch.homeTeam.name}}</td>
                     <td>vs</td>
-                    <td>{{match.awayTeam.name}}</td>
+                    <td>{{livematch.awayTeam.name}}</td>
                  </tr>
                  {%endfor%}
             </table>
