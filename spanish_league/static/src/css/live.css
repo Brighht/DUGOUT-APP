@@ -3,10 +3,11 @@
 }
 
 table {
-    border: 3px solid;
+    border: 2px solid;
     
 }
 
 td{
-    background-color: gray;
+    background-color: rgb(170, 170, 170);
+    padding: 1.5rem;
 }
