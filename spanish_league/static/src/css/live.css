@@ -1,13 +1,33 @@
 .livematches{
     display: flex;
+    
 }
 
 table {
-    border: 2px solid;
-    
+    border: 2px none;
+    height: 1rem;
 }
 
 td{
     background-color: rgb(170, 170, 170);
     padding: 1.5rem;
+}
+
+.match-title{
+    display: flex;
+    justify-items: center;
+}
+
+.upcoming-matches{
+    display: flex;
+    flex-direction: column;
+}
+
+.livematches{
+
+}
+
+.matches-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }

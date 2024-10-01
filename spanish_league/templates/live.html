@@ -6,20 +6,34 @@
         <title>Live Matches</title>
     </head>
     <body>
-        <div>{{liveMatches.competition.name}}</div>
-        <div class="livematches">
-            <table>
-                <tr>
-                    <th>Home</th>
-                    <th></th>
-                    <th>Away</th>
-                </tr>
-                 <tr>
-                    <td>{{liveMatches.homeTeam.name}}</td>
-                    <td>vs</td>
-                    <td>{{liveMatches.awayTeam.name}}</td>
-                 </tr>
-            </table>
+        <div class="matches-grid">
+            <div class="upcoming-matches">
+                <div class="match-title">
+                    <p>
+                        Upcoming Matches
+                    </p>
+                </div>
+                <div class="livematches">
+                
+                    <table>
+                        <tr>
+                            <th>Home</th>
+                            <th></th>
+                            <th>Away</th>
+                        </tr>
+                        {% for livematch in liveMatches %}
+                        <tr>
+                            <td>{{livematch.homeTeam.name}}</td>
+                            <td>vs</td>
+                            <td>{{livematch.awayTeam.name}}</td>
+                        </tr>
+                        {%endfor%}
+                    </table>
+                </div>
+            </div>
+            <div class="livematches">
+                222222
+            </div>
         </div>
     </body>
 </html>
