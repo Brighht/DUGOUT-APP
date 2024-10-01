@@ -4,8 +4,7 @@
     
 }
 
-table{
-    border-collapse: collapse;
+table td{
     border: 3px none;
     margin-right: 50px;
 }
