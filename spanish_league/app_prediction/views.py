@@ -26,5 +26,8 @@ def live_matches(request):
     #checking to see if we really have received the expected data from the data
     if response.status_code == 200:
         data_II = response.json()
-        liveMatches = data_II["matches"][0]                                    #retrieves matches diction from the json file             
-    return render(request, 'live.html', {"liveMatches": liveMatches})
+        liveMatches = data_II["matches"][0]                                                                     #retrieves matches diction from the json file 
+        feedb = []            
+        for feeds in data_II["matches"][0]["homeTeam"]:
+            feedb.append(feeds)
+    return render(request, 'live.html', {"liveMatches": liveMatches}, {"feedback":feedb})
