@@ -1,10 +1,12 @@
 .livematches{
     display: flex;
+}
 
+table {
+    border: 3px solid;
     
 }
 
-table td{
-    border: 3px none;
-    margin-right: 50px;
+td{
+    background-color: gray;
 }
