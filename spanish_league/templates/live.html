@@ -21,15 +21,19 @@
                 
                     <table>
                         <tr>
+                            <th></th>
                             <th>Home</th>
+                            <th></th>
                             <th></th>
                             <th>Away</th>
                         </tr>
                         {% for livematch in liveMatches %}
                         <tr>
-                            <td><img src="{{ livematch.homeTeam.crest }}" alt="homeTeam-crest" class="crest-size"> {{livematch.homeTeam.name}}</td>
+                            <td class="crest-size"><img src="{{ livematch.homeTeam.crest }}" alt="homeTeam-crest"></td>
+                            <td>{{livematch.homeTeam.name}}</td>
                             <td>vs</td>
-                            <td><img src="{{ livematch.awayTeam.crest }}" alt="homeTeam-crest" class="crest-size">{{livematch.awayTeam.name}}</td>
+                            <td class="crest-size"><img src="{{ livematch.awayTeam.crest }}" alt="homeTeam-crest"></td>
+                            <td >{{livematch.awayTeam.name}}</td>
                         </tr>
                         {%endfor%}
                     </table>
