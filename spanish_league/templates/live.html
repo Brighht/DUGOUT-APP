@@ -13,6 +13,10 @@
                         Upcoming Matches
                     </p>
                 </div>
+                <div class="match-day">
+                        Matchday 
+                    </p>
+                </div>
                 <div class="livematches">
                 
                     <table>
@@ -23,9 +27,9 @@
                         </tr>
                         {% for livematch in liveMatches %}
                         <tr>
-                            <td>{{livematch.homeTeam.name}}</td>
+                            <td><img src="{{ livematch.homeTeam.crest }}" alt="homeTeam-crest" class="crest-size"> {{livematch.homeTeam.name}}</td>
                             <td>vs</td>
-                            <td>{{livematch.awayTeam.name}}</td>
+                            <td><img src="{{ livematch.awayTeam.crest }}" alt="homeTeam-crest" class="crest-size">{{livematch.awayTeam.name}}</td>
                         </tr>
                         {%endfor%}
                     </table>
