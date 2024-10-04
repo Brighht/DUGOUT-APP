@@ -26,6 +26,7 @@
                             <th></th>
                             <th></th>
                             <th>Away</th>
+                            <th></th>
                         </tr>
                         {% for livematch in liveMatches %}
                         <tr>
@@ -34,6 +35,7 @@
                             <td>vs</td>
                             <td class="crest-size"><img src="{{ livematch.awayTeam.crest }}" alt="homeTeam-crest"></td>
                             <td >{{livematch.awayTeam.name}}</td>
+                            <td>{{livematch.utcDate}}</td>
                         </tr>
                         {%endfor%}
                     </table>
