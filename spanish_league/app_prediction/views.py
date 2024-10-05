@@ -3,14 +3,14 @@ from spanish_league import settings
 import requests 
 
 # Create your views here.
-def home(request):
-    url = 'https://api.football-data.org/v4/competitions/PD/standings'
-    api_key = settings.API_FOOTBALL_KEY
-    headers = { 'X-Auth-Token': api_key}
+def home(request):                                      
+    url = 'https://api.football-data.org/v4/competitions/PD/standings'                  #this makes a request to the uri server
+    api_key = settings.API_FOOTBALL_KEY                                                 #informing header where to find API_KEY
+    headers = { 'X-Auth-Token': api_key}                                                #header of request
 
-    response = requests.get(url, headers=headers)
+    response = requests.get(url, headers=headers)                                       #retreiving response from the api 
 
-    if response.status_code == 200:
+    if response.status_code == 200:                                                     #checking for success or successful retreival
         data = response.json()
         standings = data['standings'][0]['table']
     return render(request, 'home.html',{'standings':standings})
