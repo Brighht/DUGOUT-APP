@@ -11,8 +11,8 @@ def home(request):
     response = requests.get(url, headers=headers)                                       #retreiving response from the api 
 
     if response.status_code == 200:                                                     #checking for success or successful retreival
-        data = response.json()
-        standings = data['standings'][0]['table']
+        data = response.json()                                                          #assigning retreived respose to data variable
+        standings = data['standings'][0]['table']                                       #standings retrieves the value from the table key in the standing dict
     return render(request, 'home.html',{'standings':standings})
 
 
