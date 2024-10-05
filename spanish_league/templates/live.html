@@ -40,13 +40,14 @@
                     </table>
                 </div>
             </div>
-            <div class="livematches">
+            <div class="livematches-inplay">
                 <div>
                     <p>
                         liveMatches
-                        
+
                     </p>
                 </div>
+                {% for previousMatches in previouslyPlayed %}
                 <table>
                     <tr>
                         <th>Home</th>
@@ -54,11 +55,12 @@
                         <th>Away</th>
                     </tr>
                     <tr>
+                        <td>{{previousMatches.homeTeam.name}}</td>
                         <td></td>
-                        <td></td>
-                        <td></td>
+                        <td>{{previousMatches.awayTeam.name}}</td>
                     </tr>
                 </table>
+                {% endfor %}
             </div>
         </div>
     </body>

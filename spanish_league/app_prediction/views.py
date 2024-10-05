@@ -22,6 +22,7 @@ def live_matches(request):
     headers = { 'X-Auth-Token': api_key}
     response = requests.get(url, headers=headers)
 
+
     #checking to see if we really have received the expected data from the data
     if response.status_code == 200:
         liveMatches = []
