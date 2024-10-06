@@ -3,17 +3,25 @@ from spanish_league import settings
 import requests 
 
 # Create your views here.
-def home(request):                                      
-    url = 'https://api.football-data.org/v4/competitions/PD/standings'                  #this makes a request to the uri server
-    api_key = settings.API_FOOTBALL_KEY                                                 #informing header where to find API_KEY
-    headers = { 'X-Auth-Token': api_key}                                                #header of request
+def home(request):
+    try:                                      
+        url = 'https://api.football-data.org/v4/competitions/PD/standings'                  #this makes a request to the uri server
+        uri = 'https://api.football-data.org/v4/competitions/PD/scorers'
+        api_key = settings.API_FOOTBALL_KEY                                                 #informing header where to find API_KEY
+        headers = { 'X-Auth-Token': api_key}                                                #header of request
 
-    response = requests.get(url, headers=headers)                                       #retreiving response from the api 
+        response = requests.get(url, headers=headers)                                       #retreiving response from the api 
+        response2 = requests.get(uri, headers=headers)
 
-    if response.status_code == 200:                                                     #checking for success or successful retreival
-        data = response.json()                                                          #assigning retreived respose to data variable
-        standings = data['standings'][0]['table']                                       #standings retrieves the value from the table key in the standing dict
-    return render(request, 'home.html',{'standings':standings})
+        if response.status_code == 200:                                                     #checking for success or successful retreival
+            data = response.json()                                                          #assigning retreived respose to data variable
+            standings = data['standings'][0]['table']                                       #standings retrieves the value from the table key in the standing dict
+        if response2.status_code == 200:
+            scoreSheet = response2.json()
+            topScorer = scoreSheet['scorers'][0]
+        return render(request, 'home.html',{'standings':standings},{"topScorer":topScorer})
+    except requests.exceptions.RequestException as e:
+        return render(request, 'error.html', {"error":"One request failed"})
 
 
 def live_matches(request):
