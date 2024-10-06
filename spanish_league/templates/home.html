@@ -87,14 +87,21 @@
                     </a>
             </div>
         </div>
+        {% for topScorers in topScorer %}
         <div>
             <table>
                 <tr>
                     <th></th>
                     <th>Name</th>
-                    <th></th>
+                    <th>Goals</th>
+                </tr>
+                <tr>
+                    <td>{{topScorer.team.crest}}</td>
+                    <td>{{topScorer.player.firstName}}</td>
+                    <td>{{topScorer.goals}}</td>
                 </tr>
             </table>
         </div>
+        {% endfor %}
     </body>
 </html>
