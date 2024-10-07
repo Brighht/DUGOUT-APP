@@ -1,9 +1,11 @@
 from django.shortcuts import render
 from spanish_league import settings
 import requests 
+import asyncio
+import aiohttp
 
 # Create your views here.
-def home(request):
+async def home(request):
     try:                                      
         url = 'https://api.football-data.org/v4/competitions/PD/standings'                  #this makes a request to the uri server
         uri = 'https://api.football-data.org/v4/competitions/PD/scorers'
