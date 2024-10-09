@@ -5,14 +5,10 @@ import asyncio
 import aiohttp
 
 # Create your views here.
-async def fetch_info(session,url, headers=None):
-    async with session.get(url, headers=headers) as response:
-        return await response.json()
-
-async def home(request):
+def home(request):
     try:                                      
-        url1 = 'https://api.football-data.org/v4/competitions/PD/standings'                  #this makes a request to the uri server
-        url2 = 'https://api.football-data.org/v4/competitions/PD/scorers'
+        url = 'https://api.football-data.org/v4/competitions/PD/standings'                  #this makes a request to the uri server
+        uri = 'https://api.football-data.org/v4/competitions/PD/scorers'
         api_key = settings.API_FOOTBALL_KEY                                                 #informing header where to find API_KEY
         headers = { 'X-Auth-Token': api_key}                                                #header of request
 
@@ -25,12 +21,13 @@ async def home(request):
         if response2.status_code == 200:
             scoreSheet = response2.json()
             topScorer = scoreSheet['scorers'][0]
-        return render(request, 'home.html',{'standings':standings},{"topScorer":topScorer})
+        return render(request, 'home.html',{'standings':standings})
     except requests.exceptions.RequestException as e:
         return render(request, 'error.html', {"error":"One request failed"})
 
 
 def live_matches(request):
+    
     url = 'http://api.football-data.org/v4/competitions/2014/matches?matchday=8'
     api_key = settings.API_FOOTBALL_KEY
     headers = { 'X-Auth-Token': api_key}
