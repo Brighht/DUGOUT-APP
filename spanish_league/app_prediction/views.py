@@ -5,10 +5,14 @@ import asyncio
 import aiohttp
 
 # Create your views here.
+async def fetch_info(session,url, headers=None):
+    async with session.get(url, headers=headers) as response:
+        return await response.json()
+
 async def home(request):
     try:                                      
-        url = 'https://api.football-data.org/v4/competitions/PD/standings'                  #this makes a request to the uri server
-        uri = 'https://api.football-data.org/v4/competitions/PD/scorers'
+        url1 = 'https://api.football-data.org/v4/competitions/PD/standings'                  #this makes a request to the uri server
+        url2 = 'https://api.football-data.org/v4/competitions/PD/scorers'
         api_key = settings.API_FOOTBALL_KEY                                                 #informing header where to find API_KEY
         headers = { 'X-Auth-Token': api_key}                                                #header of request
 
