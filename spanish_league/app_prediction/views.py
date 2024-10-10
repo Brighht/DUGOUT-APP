@@ -41,3 +41,6 @@ def live_matches(request):
         for match in data_II['matches']:                                  #This iterates throught the json file and locates the values contained by the key "matches"
             liveMatches.append(match)                                                                     
     return render(request, 'live.html', {"liveMatches": liveMatches})
+
+    def matchTactics(request):
+        return render (request, "tactics.html")
