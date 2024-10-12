@@ -8,17 +8,11 @@
     <body>
         <div class="matches-grid">
             <div class="upcoming-matches">
-                <div class="match-title">
-                    <p>
-                        Upcoming Matches
-                    </p>
-                </div>
-                <div class="match-day">
-                        Matchday 
-                    </p>
-                </div>
                 <div class="livematches">
                     <table>
+                        <tr class="header">
+                            <th>UPCOMING MATCHES</th>
+                        </tr>
                         <tr>
                             <th></th>
                             <th>Home</th>
@@ -27,40 +21,18 @@
                             <th>Away</th>
                             <th></th>
                         </tr>
-                        {% for livematch in liveMatches %}
+                        {% for upcomingmatch in upcomingMatches %}
                         <tr>
-                            <td class="crest-size"><img src="{{ livematch.homeTeam.crest }}" alt="homeTeam-crest"></td>
-                            <td>{{livematch.homeTeam.name}}</td>
+                            <td class="crest-size"><img src="{{ upcomingmatch.homeTeam.crest }}" alt="homeTeam-crest"></td>
+                            <td>{{upcomingmatch.homeTeam.name}}</td>
                             <td>vs</td>
-                            <td class="crest-size"><img src="{{ livematch.awayTeam.crest }}" alt="homeTeam-crest"></td>
-                            <td >{{livematch.awayTeam.name}}</td>
-                            <td>{{livematch.utcDate}}</td>
+                            <td class="crest-size"><img src="{{ upcomingmatch.awayTeam.crest }}" alt="homeTeam-crest"></td>
+                            <td >{{upcomingmatch.awayTeam.name}}</td>
+                            <td>{{upcomingmatch.utcDate}}</td>
                         </tr>
                         {%endfor%}
                     </table>
                 </div>
-            </div>
-            <div class="livematches-inplay">
-                <div>
-                    <p>
-                        liveMatches
-
-                    </p>
-                </div>
-                {% for previousMatches in previouslyPlayed %}
-                <table>
-                    <tr>
-                        <th>Home</th>
-                        <th></th>
-                        <th>Away</th>
-                    </tr>
-                    <tr>
-                        <td>{{previousMatches.homeTeam.name}}</td>
-                        <td></td>
-                        <td>{{previousMatches.awayTeam.name}}</td>
-                    </tr>
-                </table>
-                {% endfor %}
             </div>
         </div>
     </body>

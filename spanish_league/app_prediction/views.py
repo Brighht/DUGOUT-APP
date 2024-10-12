@@ -26,7 +26,7 @@ def home(request):
         return render(request, 'error.html', {"error":"One request failed"})
 
 
-def live_matches(request):
+def upcoming_matches(request):
     
     url = 'http://api.football-data.org/v4/competitions/2014/matches?matchday=8'
     api_key = settings.API_FOOTBALL_KEY
@@ -36,11 +36,11 @@ def live_matches(request):
 
     #checking to see if we really have received the expected data from the data
     if response.status_code == 200:
-        liveMatches = []
+        upcomingMatches = []
         data_II = response.json()
         for match in data_II['matches']:                                  #This iterates throught the json file and locates the values contained by the key "matches"
-            liveMatches.append(match)                                                                     
-    return render(request, 'live.html', {"liveMatches": liveMatches})
+            upcomingMatches.append(match)                                                                     
+    return render(request, 'live.html', {"upcomingMatches": upcomingMatches})
 
     def matchTactics(request):
-        return render (request, "tactics.html")
+        pass
