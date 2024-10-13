@@ -14,9 +14,19 @@ def signUp(request):
         password1 = request.POST['password1']
         password2 = request.POST['password2']
 
-        if User.objects.filter(username = username).exist():
-            messages.info(request, "Username Exists")
-            redirect('signup')
+        if password1 == password2:
+            if User.objects.filter(username = username).exist():
+                messages.info(request, "Username Exists")
+                return redirect('signup')
+        
+            elif User.objects.filter(email = email).exits():
+                messages.info(request, "Email ALready Used")
+                return redirect('signup')
+
+            else:
+                return redirect('login')
+        else:
+            return render(request, 'signup.html')
 
     return render(request, 'signup.hmtl')
 
