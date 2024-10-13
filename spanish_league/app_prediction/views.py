@@ -1,10 +1,26 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from spanish_league import settings
 import requests 
-import asyncio
-import aiohttp
+from django.http import request
+from django.contrib.auth.models import User
+from django.contrib.auth import authenticate,
+from django.contrib import messages
 
 # Create your views here.
+def signUp(request):
+    if request.method == 'POST':
+        username =request.POST['username']
+        email = request.POST['email']
+        password1 = request.POST['password1']
+        password2 = request.POST['password2']
+
+        if User.objects.filter(username = username).exist():
+            messages.info(request, "Username Exists")
+            redirect('signup')
+
+    return render(request, 'signup.hmtl')
+
+
 def home(request):
     try:                                      
         url = 'https://api.football-data.org/v4/competitions/PD/standings'                  #this makes a request to the uri server
@@ -20,7 +36,6 @@ def home(request):
             standings = data['standings'][0]['table']                                       #standings retrieves the value from the table key in the standing dict
         if response2.status_code == 200:
             scoreSheet = response2.json()
-            topScorer = scoreSheet['scorers'][0]
         return render(request, 'home.html',{'standings':standings})
     except requests.exceptions.RequestException as e:
         return render(request, 'error.html', {"error":"One request failed"})
