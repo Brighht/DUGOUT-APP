@@ -3,7 +3,7 @@ from spanish_league import settings
 import requests 
 from django.http import request 
 from django.contrib.auth.models import User
-from django.contrib.auth import authenticate,
+from django.contrib.auth import authenticate
 from django.contrib import messages
 
 # Create your views here.
