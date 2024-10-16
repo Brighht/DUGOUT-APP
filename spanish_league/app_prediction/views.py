@@ -1,10 +1,10 @@
 from django.shortcuts import render,redirect
 from spanish_league import settings
 import requests 
-from django.http import request 
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate
 from django.contrib import messages
+from django.contrib import auth
 
 # Create your views here.
 def signUp(request):
@@ -30,6 +30,24 @@ def signUp(request):
 
     return render(request, 'signup.hmtl')
 
+
+def login(request):
+    if request.method == 'POST':
+        username = request.POST['username']
+        password1 = request.POST['password1']
+        password2 = request.POST['password2']
+
+    
+        user = User.auth.authenticate(username=username, password = password1)
+        user.save()
+
+        if User is not None:
+            auth.login(request, User)
+            return redirect('home')
+        else:
+            return redirect('login')
+    return render(request, 'home.html')
+    
 
 def home(request):
     try:                                      
