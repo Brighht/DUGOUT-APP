@@ -44,8 +44,10 @@ def login(request):
         if User is not None:
             auth.login(request, User)
             return redirect('home')
-
-        
+        else:
+            return redirect('login')
+    return render(request, 'home.html')
+    
 
 def home(request):
     try:                                      
