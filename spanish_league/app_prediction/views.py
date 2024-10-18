@@ -28,7 +28,7 @@ def signUp(request):
         else:
             return render(request, 'signup.html')
 
-    return render(request, 'signup.hmtl')
+    return render(request, 'signup.html')
 
 
 def login(request):
