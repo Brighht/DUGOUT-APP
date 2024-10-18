@@ -5,8 +5,17 @@
     </head>
     <body>
         <div>
-            <form >
-                
+            <form action="{% url 'signup' %}" method="POST">
+                <P>Username</P>
+                <input type="text" name="username">
+                <p>email</p>
+                <input type="email" name="email">
+                <p>password</p>
+                <input type="password" name="password1">
+                <p>retype password</p>
+                <input type="password" name="password2">
+                <p></p>
+                <input type="button" value="submit">
             </form>
         </div>
     </body>
