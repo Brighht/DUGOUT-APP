@@ -1,6 +1,0 @@
-{
-    "python.analysis.extraPaths": [
-        "./laliga",
-        "./spanish_league/spanish_league"
-    ]
-}
