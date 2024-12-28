@@ -1,0 +1,114 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Football Predictions</title>
+    <link rel="stylesheet" href="{% static 'styles/main.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'styles/table.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'styles/avatar.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'styles/discussion.css' %}" type="text/css">
+</head>
+<body>
+    <div class="container">
+        <!-- User Avatar Section -->
+        <div class="avatar-card">
+            <div class="avatar-wrapper">
+                <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=100&h=100" 
+                     alt="User avatar" class="avatar-image">
+                <span class="status-dot"></span>
+            </div>
+            <div class="user-info">
+                <h3>John Doe</h3>
+                <p>Hard Fun</p>
+            </div>
+        </div>
+
+        <!-- League Table Section -->
+        <div class="league-table">
+            <div class="table-header">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="trophy-icon">
+                    <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path>
+                    <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path>
+                    <path d="M4 22h16"></path>
+                    <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"></path>
+                    <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"></path>
+                    <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"></path>
+                </svg>
+                <h2>La Liga League Table</h2>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Pos</th>
+                        <th>Team</th>
+                        <th>P</th>
+                        <th>W</th>
+                        <th>D</th>
+                        <th>L</th>
+                        <th>GD</th>
+                        <th>Pts</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for standing in standings %}
+                    <tr>
+                        <td>{{ standing.position }}</td>
+                        <td><img class="club-logo" src="{{ standing.team.crest }}" alt="club-logo"></td>
+                        <td>{{ standing.team.name }}</td>
+                        <td>{{ standing.playedGames }}</td>
+                        <td>{{ standing.goalDifference }}</td>
+                        <td>{{ standing.points }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Discussion Box Section -->
+        <div class="discussion-box">
+            <div class="discussion-header">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                </svg>
+                <h2>Match Discussion</h2>
+            </div>
+            <div class="messages">
+                <div class="message">
+                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=50&h=50" 
+                         alt="Sarah" class="message-avatar">
+                    <div class="message-content">
+                        <div class="message-header">
+                            <span class="message-author">Sarah</span>
+                            <span class="message-time">2m ago</span>
+                        </div>
+                        <p>Arsenal looking strong for the title this year!</p>
+                    </div>
+                </div>
+                <div class="message">
+                    <img src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?auto=format&fit=crop&w=50&h=50" 
+                         alt="Mike" class="message-avatar">
+                    <div class="message-content">
+                        <div class="message-header">
+                            <span class="message-author">Mike</span>
+                            <span class="message-time">5m ago</span>
+                        </div>
+                        <p>Liverpool's defense needs work though...</p>
+                    </div>
+                </div>
+            </div>
+            <div class="message-input">
+                <input type="text" placeholder="Type your message...">
+                <button class="send-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="m22 2-7 20-4-9-9-4Z"></path>
+                        <path d="M22 2 11 13"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

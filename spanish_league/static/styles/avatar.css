@@ -1,0 +1,43 @@
+/* Avatar Card Styles */
+.avatar-card {
+    background: white;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.avatar-wrapper {
+    position: relative;
+}
+
+.avatar-image {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.status-dot {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 0.75rem;
+    height: 0.75rem;
+    background-color: var(--success-color);
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+.user-info h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.user-info p {
+    font-size: 0.875rem;
+    color: #718096;
+}
