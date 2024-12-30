@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="{% static 'styles/table.css' %}" type="text/css">
     <link rel="stylesheet" href="{% static 'styles/avatar.css' %}" type="text/css">
     <link rel="stylesheet" href="{% static 'styles/discussion.css' %}" type="text/css">
+    <link rel="icon" type="image/png" href="{% static 'logo/Dugout APP.png' %}">
+
 </head>
 <body>
     <div class="container">
@@ -22,7 +24,7 @@
             </div>
             <div class="user-info">
                 <h3>John Doe</h3>
-                <p>Hard Fun</p>
+                <p>Barcalona Fan</p>
             </div>
         </div>
 
@@ -43,12 +45,14 @@
                 <thead>
                     <tr>
                         <th>Pos</th>
-                        <th>Team</th>
-                        <th>P</th>
+                        <th>Team Logo</th>
+                        <th>Team Names</th>
                         <th>W</th>
                         <th>D</th>
                         <th>L</th>
+                        <th>GF</th>
                         <th>GD</th>
+                        <th>P</th>
                         <th>Pts</th>
                     </tr>
                 </thead>
@@ -58,8 +62,12 @@
                         <td>{{ standing.position }}</td>
                         <td><img class="club-logo" src="{{ standing.team.crest }}" alt="club-logo"></td>
                         <td>{{ standing.team.name }}</td>
-                        <td>{{ standing.playedGames }}</td>
+                        <td>{{ standing.won }}</td>
+                        <td>{{ standing.draw }}</td>
+                        <td>{{ standing.lost }}</td>
+                        <td>{{ standing.goalsFor }}</td>
                         <td>{{ standing.goalDifference }}</td>
+                        <td>{{ standing.playedGames }}</td>
                         <td>{{ standing.points }}</td>
                     </tr>
                     {% endfor %}
@@ -84,7 +92,7 @@
                             <span class="message-author">Sarah</span>
                             <span class="message-time">2m ago</span>
                         </div>
-                        <p>Arsenal looking strong for the title this year!</p>
+                        <p>Athleti looking strong for the title this year!</p>
                     </div>
                 </div>
                 <div class="message">
@@ -95,7 +103,7 @@
                             <span class="message-author">Mike</span>
                             <span class="message-time">5m ago</span>
                         </div>
-                        <p>Liverpool's defense needs work though...</p>
+                        <p>Barca's defense needs work though...</p>
                     </div>
                 </div>
             </div>
