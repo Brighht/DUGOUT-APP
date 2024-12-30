@@ -1,7 +1,7 @@
-from django import forms 
+from django import forms
+from .models import CommentBox
 
-class UserDetails(forms.Form):
-    username = forms.CharField(max_length=100)
-    email = forms.EmailField(max_length=100)
-    password = forms.PasswordInput
-    Gender = forms.CharField(max_length=10)
+class CommentForm(forms.ModelForm):
+    class Meta:
+        model = CommentBox
+        fields = ['content']

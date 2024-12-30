@@ -96,15 +96,20 @@
                     </div>
                 </div>
                 <div class="message">
+                    {% for comment in comments %}
                     <img src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?auto=format&fit=crop&w=50&h=50" 
                          alt="Mike" class="message-avatar">
                     <div class="message-content">
                         <div class="message-header">
-                            <span class="message-author">Mike</span>
+                            <span class="message-author">{{ comment.user.username }}</span>
                             <span class="message-time">5m ago</span>
                         </div>
-                        <p>Barca's defense needs work though...</p>
+                        <p>{{ comment.content }}</p>
                     </div>
+                    <hr>
+                    {% empty %}
+                        <p>No comments yet. Be the first to comment!</p>
+                    {% endfor %}
                 </div>
             </div>
             <div class="message-input">
