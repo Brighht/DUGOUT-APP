@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'app_prediction'
+    'la_liga'
 ]
 
 MIDDLEWARE = [
