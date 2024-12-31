@@ -20,16 +20,16 @@ def home(request):
         data = response.json()                                                          #assigning retreived respose to data variable
         standings = data['standings'][0]['table']                                       #standings retrieves the value from the table key in the standing dict
 
-    comments = CommentBox.objects.all().order_by('-created_at')
-    if request.method == 'POST':
-        form = CommentForm(request.POST)
-        if form.is_valid():
-            comment = form.save(commit=False)
-            comment.user = request.user                                                 # Ensure the user is authenticated
-            comment.save()
-            return redirect('index')                                            # Replace with the appropriate route name
-    else:
-        form = CommentForm()
-    return render(request, 'index.html',{'standings':standings,
-                                        'comments': comments,
-                                        'form' : form})
+    # comments = CommentBox.objects.all().order_by('-created_at')
+    # if request.method == 'POST':
+    #     form = CommentForm(request.POST)
+    #     if form.is_valid():
+    #         comment = form.save(commit=False)
+    #         comment.user = request.user                                                 # Ensure the user is authenticated
+    #         comment.save()
+    #         return redirect('index')                                            # Replace with the appropriate route name
+    # else:
+    #     form = CommentForm()
+    return render(request, 'index.html',{'standings':standings})
+                                        # 'comments': comments,
+                                        # 'form' : form})
