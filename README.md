@@ -38,7 +38,7 @@ The app combines real-time data integration and predictive algorithms to offer i
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/Brighht/LALIGA-APP.git
+   git clone https://github.com/Brighht/DUGOUT-APP.git
    cd laliga-prediction-app
    ```
 2. Creating an Environment
