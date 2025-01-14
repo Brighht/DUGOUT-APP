@@ -18,6 +18,31 @@ The app combines real-time data integration and predictive algorithms to offer i
 
 ---
 
+## APP STRUCTURE
+```
+dugout_project/
+│
+├── laliga/
+│   ├── models.py
+│   ├── views.py
+│   ├── urls.py
+│   ├── templates/laliga/
+│
+├── premierleague/
+│   ├── models.py
+│   ├── views.py
+│   ├── urls.py
+│   ├── templates/premierleague/
+│
+├── common/
+│   ├── models.py
+│   ├── utils.py
+│
+└── dugout_project/
+    ├── settings.py
+    ├── urls.py
+    └── ...
+
 ## 🛠️ Technologies Used
 
 - **Frontend:** HTML, CSS
