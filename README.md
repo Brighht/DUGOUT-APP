@@ -21,7 +21,7 @@ The app combines real-time data integration and predictive algorithms to offer i
 ## APP STRUCTURE
 ```
 dugout_project/
-│
+│── frontend/
 ├── laliga/
 │   ├── models.py
 │   ├── views.py
